@@ -10,7 +10,7 @@ const Sidebar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <section className='flex w-full bg-gray-600 '>
+        <section className='flex bg-gray-600 min-h-screen'>
             <div className={`flex ${isOpen ? 'w-64' : 'w-[50px]'} bg-gray-800 min-h-screen pt-8 relative duration-300`}>
                 <button
                     className="absolute top-5 right-[10px] max-sm:right-[4px] text-white text-2xl mx-[5px] hover:scale-[1.08] transition-all duration-300"
@@ -49,15 +49,15 @@ const Sidebar = () => {
                     </ul>
                 </div>
             </div>
-            <section className='min-h-screen w-full bg-gray-600'>
-                <div className='w-full p-3 flex justify-between items-center bg-gray-800'>
+            <section className='min-h-screen w-full relative bg-gray-600'>
+                <div className='w-full p-3 flex justify-between items-center absolute top-0 bg-gray-800'>
                     <input type="text" placeholder='Search' className='border border-white p-2 rounded-xl outline-none bg-transparent max-sm:max-w-28 text-white px-3 hover:scale-[1.08] transition-all duration-300' />
                     <div className='flex items-center '>
                         <img src={Profile} alt="user-profile" className='w-[48px]' />
                         <Dropdown />
                     </div>
                 </div>
-                <div className="container mx-auto px-3 mb-5">
+                <div className=" mx-auto px-3 height absolute top-[72px] overflow-y-scroll">
                     <div className='flex flex-wrap -mx-3 flex-row'>
                         <Card />
                     </div>
